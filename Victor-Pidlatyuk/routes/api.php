@@ -60,3 +60,4 @@ Route::group(['prefix' => 'products'], function () {
     Route::get('','App\Http\Controllers\ProductController@getAll');
 });
 Route::post('/orders', 'App\Http\Controllers\OrderController@create');
+

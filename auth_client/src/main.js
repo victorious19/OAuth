@@ -7,6 +7,7 @@ import RegisterPage from "./components/RegisterPage";
 import ResetPassword from "./components/ResetPassword";
 import ForgotPassword from "./components/ForgotPassword";
 import Page404 from "./components/404"
+import Authentificate from "./components/Authentificate";
 
 Vue.config.productionTip = false
 
@@ -18,7 +19,7 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      component: LoginPage
+      component: Authentificate
     },
     {
       path: '/login',

@@ -19,8 +19,7 @@
                 </div>
                 <div class="text-end mt-auto mb-auto p-3">
                     <router-link to="/profile" class="btn btn-light text-dark me-2" v-if="$cookie.get('token') && $cookie.get('id')">Back to profile</router-link>
-                    <router-link to="/login" class="btn btn-light text-dark me-2">Login</router-link>
-                    <router-link to="/register" class="btn btn-secondary">Sign-up</router-link>
+                    <a href="http://127.0.0.1:9090/oauth/redirect" class="btn btn-light text-dark me-2">Login</a>
                 </div>
             </div>
         </div>
