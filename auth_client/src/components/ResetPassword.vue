@@ -76,7 +76,7 @@ export default {
     methods: {
         async reset() {
             this.errors = {main: ''}
-            axios.post('/api/auth/change-password', {
+            axios.post('http://auth-server.test:8000/api/auth/change-password', {
                 'email': this.email,
                 'password': this.password,
                 'password_confirmation': this.password_confirmation,

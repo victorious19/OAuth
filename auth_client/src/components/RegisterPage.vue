@@ -93,7 +93,7 @@ export default {
             event.preventDefault()
             this.errors = {main: ''}
 
-            axios.post('/api/auth/register', {
+            axios.post('http://auth-server.test:8000/api/auth/register', {
                 'login':this.login,
                 'full_name':this.full_name,
                 'password':this.password,

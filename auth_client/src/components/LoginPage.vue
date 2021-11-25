@@ -71,7 +71,7 @@ export default {
             event.preventDefault()
             this.errors = {main: ''}
 
-            axios.post('/api/auth/login', {
+            axios.post('http://auth-server.test:8000/api/auth/login', {
                 'login': this.username,
                 'password': this.password
             })

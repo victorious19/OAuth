@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Closure;
 use Illuminate\Contracts\Auth\Factory as Auth;
 
@@ -35,8 +36,10 @@ class Authenticate
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        $user = User::where('auth_code', $request->get('auth_code'))->first();
+        if ($user) dd($user);
         if ($this->auth->guard($guard)->guest()) {
-            return response('Unauthorized.', 401);
+            return redirect(env('CLIENT_URI').'/login');
         }
 
         return $next($request);

@@ -49,7 +49,7 @@ export default {
             event.preventDefault()
             this.success = false
             this.errors = []
-            axios.post('/api/auth/reset-password', {'email':this.email})
+            axios.post('http://auth-server.test:8000/api/auth/reset-password', {'email':this.email})
                 .then(() => {
                     this.$router.push({ path: '/reset-password', query: {email: this.email }})
                 })

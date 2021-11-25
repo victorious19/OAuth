@@ -1,8 +1,8 @@
 <template>
   <div class="text-center">
     <h2>GoodShop is requesting permissions to access your account</h2>
-    <button class="btn btn-primary mr-3">Accept</button>
-    <button class="btn btn-danger">Decline</button>
+    <a class="btn btn-primary mr-3" href="http://auth-server.test:8000/api/answer?accept=true">Accept</a>
+    <a class="btn btn-danger" href="http://auth-server.test:8000/api/answer?accept=true">Decline</a>
   </div>
 </template>
 

@@ -16,9 +16,14 @@ use DateTime;
 class AuthController extends Controller
 {
     function oauth(Request $request) {
-        $request->session()->put('name', 'Lumen-Session');
-        return $request->session()->get('name');
+        $request->session()->put('redirect_uri', $request->get('redirect_uri'));
         return redirect(env('CLIENT_URI'));
+    }
+    function answer(Request $request) {
+        if ($request->get('accept') == true) {
+
+        }
+        return redirect($request->session()->get('redirect_uri').'?accept=false');
     }
     function register(Request $request) {
         $this->validate($request, [
@@ -31,8 +36,11 @@ class AuthController extends Controller
         ]);
         $request['password'] = Hash::make($request['password']);
         $user = User::create($request->all());
+        $auth_code = Str::random(40);
+        $user->update(['auth_code' => $auth_code]);
+        $request->session()->put('auth_code', $auth_code);
 
-        return $user;
+        return redirect('/')->withInput(['auth_code' => $auth_code]);
     }
     function login(Request $request)
     {
@@ -50,7 +58,11 @@ class AuthController extends Controller
             return response(['message' => "Bad login or password"], 400);
         }
 
-        return $user;
+        $auth_code = Str::random(40);
+        $user->update(['auth_code' => $auth_code]);
+        $request->session()->put('auth_code', $auth_code);
+
+        return redirect('/')->withInput(['auth_code' => $auth_code]);
     }
 
     function passwordReset(Request $request) {
