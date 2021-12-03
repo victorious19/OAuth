@@ -8,6 +8,9 @@
 
 <script>
 export default {
+  mounted() {
+    window.location.href = 'http://auth-server.test:8000/api/main_view'
+  }
 }
 </script>
 

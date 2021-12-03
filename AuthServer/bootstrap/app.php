@@ -62,6 +62,8 @@ $app->singleton(
 $app->configure('app');
 $app->configure('auth');
 $app->configure('session');
+$app->configure('cors');
+$app->configure('services');
 
 /*
 |--------------------------------------------------------------------------
@@ -78,12 +80,14 @@ $app->configure('session');
 //     App\Http\Middleware\ExampleMiddleware::class
 // ]);
 
- $app->routeMiddleware([
-     'auth' => App\Http\Middleware\Authenticate::class,
-     \Illuminate\Session\Middleware\StartSession::class,
- ]);
+$app->routeMiddleware([
+    'auth' => App\Http\Middleware\Authenticate::class,
+]);
 $app->middleware([
     \Illuminate\Session\Middleware\StartSession::class,
+]);
+$app->routeMiddleware([
+    Fruitcake\Cors\HandleCors::class,
 ]);
 
 $app->singleton(Illuminate\Session\SessionManager::class, function () use ($app) {
@@ -113,6 +117,8 @@ $app->register(Laravel\Passport\PassportServiceProvider::class);
 $app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
 $app->register(Illuminate\Session\SessionServiceProvider::class);
 $app->register(Illuminate\Database\Eloquent\LegacyFactoryServiceProvider::class);
+$app->register(Fruitcake\Cors\CorsServiceProvider::class);
+$app->register(Laravel\Socialite\SocialiteServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------

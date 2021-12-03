@@ -35,8 +35,8 @@
                 </form>
 
                 <div class="social-auth-links text-center mt-2 mb-3">
-                    <a href="/api/auth/google" class="btn btn-block btn-danger">
-                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                    <a href="http://auth-server.test:8000/api/auth/google" class="btn btn-block btn-danger">
+                        <i class="fab fa-google-plus mr-2"></i>Sign in using Google+
                     </a>
                 </div>
 
@@ -60,7 +60,7 @@ export default {
         return {
             errors: {main:''},
             username: '',
-            password: ''
+            password: '',
         }
     },
     mounted() {
@@ -70,11 +70,11 @@ export default {
         async login(event) {
             event.preventDefault()
             this.errors = {main: ''}
-
-            axios.post('http://auth-server.test:8000/api/auth/login', {
-                'login': this.username,
-                'password': this.password
-            })
+            let data = {
+              login: this.username,
+              password: this.password,
+            }
+            axios.post('http://auth-server.test:8000/api/auth/login', data)
                 .then(res => {
                     this.$router.push({path: '/profile', query: {token: res.data.token, id: res.data.user.id}})
                 })

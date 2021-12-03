@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="form-group input-group mb-3">
-                        <input type="text" class="form-control" v-bind:class="{'is-invalid':errors.full_name}" pattern="([a-zA-Zа-яА-Я]+\s){1,2}([a-zA-Zа-яА-Я]+)" placeholder="Full name" v-model="full_name">
+                        <input type="text" class="form-control" v-bind:class="{'is-invalid':errors.full_name}" placeholder="Full name" v-model="full_name">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -99,9 +99,6 @@ export default {
                 'password':this.password,
                 'password_confirmation':this.password_confirmation,
                 'email':this.email
-            })
-            .then(res => {
-                this.$router.push({path: '/profile', query: {token: res.data.token, id: res.data.user.id}})
             })
             .catch(err => {
                 if (err.response.data.errors) this.errors = err.response.data.errors

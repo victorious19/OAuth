@@ -32,7 +32,12 @@ $router->group(['prefix' => 'api'], function() use($router) {
         $router->post('/reset-password', 'AuthController@passwordReset');
         $router->post('/change-password', 'AuthController@passwordChange');
     });
+    $router->get('/oauth/authorize', 'AuthController@oauth');
     $router->group(['middleware' => 'auth'], function() use($router) {
-        $router->get('/oauth/authorize', 'AuthController@oauth');
+        $router->get('/main_view', 'AuthController@view');
     });
+});
+$router->options('{path:.*}', function() {
+    return response()->json('',200)
+        ->header('Access-Control-Allow-Headers', 'Content-Type, Accept, Authorization, X-Requested-With, Application');
 });

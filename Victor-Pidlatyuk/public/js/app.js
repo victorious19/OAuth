@@ -48022,7 +48022,7 @@ var render = function () {
                     "a",
                     {
                       staticClass: "btn btn-light text-dark me-2",
-                      attrs: { href: "http://127.0.0.1:9090/oauth/redirect" },
+                      attrs: { href: "/oauth/redirect" },
                     },
                     [_vm._v("Login")]
                   ),

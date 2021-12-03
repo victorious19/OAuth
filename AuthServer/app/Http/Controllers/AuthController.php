@@ -17,7 +17,8 @@ class AuthController extends Controller
 {
     function oauth(Request $request) {
         $request->session()->put('redirect_uri', $request->get('redirect_uri'));
-        return redirect(env('CLIENT_URI'));
+        $request->session()->get('auth_code');
+        return redirect('/api/main_view');
     }
     function answer(Request $request) {
         if ($request->get('accept') == true) {
@@ -25,9 +26,13 @@ class AuthController extends Controller
         }
         return redirect($request->session()->get('redirect_uri').'?accept=false');
     }
+    function view() {
+        return redirect(env('CLIENT_URI'));
+    }
     function register(Request $request) {
+        return $request;
         $this->validate($request, [
-            'login' => 'required|string|unique:users,login|max:30',
+            'login' => 'required|string|unique:users,login',
             'password'=>'required|confirmed|min:8',
             'full_name'=>'required|string|max:255',
             'email'=>'required|string|unique:users,email|max:255',
@@ -40,12 +45,12 @@ class AuthController extends Controller
         $user->update(['auth_code' => $auth_code]);
         $request->session()->put('auth_code', $auth_code);
 
-        return redirect('/')->withInput(['auth_code' => $auth_code]);
+        return redirect('/');
     }
     function login(Request $request)
     {
         $this->validate($request, [
-            'login' => 'required|string|max:30',
+            'login' => 'required|string',
             'password'=>'required|string|min:8'
         ]);
         $auth = $request->only(['login', 'password']);
@@ -62,7 +67,7 @@ class AuthController extends Controller
         $user->update(['auth_code' => $auth_code]);
         $request->session()->put('auth_code', $auth_code);
 
-        return redirect('/')->withInput(['auth_code' => $auth_code]);
+        return redirect('/');
     }
 
     function passwordReset(Request $request) {
