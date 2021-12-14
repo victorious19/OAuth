@@ -9,12 +9,6 @@
 <script>
 export default {
   mounted() {
-    let auth_code = this.$route.query.auth_code;
-
-    if (auth_code) {
-      this.$cookie.set('auth_code', auth_code);
-    }
-
     if (!this.$cookie.get('auth_code')) {
       this.$router.push('/login')
     }

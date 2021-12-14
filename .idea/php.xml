@@ -45,7 +45,6 @@
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/polyfill-php73" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/string" />
-      <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/service-contracts" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/polyfill-php72" />
@@ -57,7 +56,6 @@
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/http-foundation" />
-      <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/event-dispatcher" />
@@ -90,7 +88,6 @@
       <path value="$PROJECT_DIR$/AuthServer/vendor/illuminate/log" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/illuminate/bus" />
-      <path value="$PROJECT_DIR$/AuthServer/vendor/illuminate/container" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/polyfill-php81" />
@@ -242,6 +239,37 @@
       <path value="$PROJECT_DIR$/Victor-Pidlatyuk/vendor/composer" />
       <path value="$PROJECT_DIR$/Victor-Pidlatyuk/vendor/laravel/serializable-closure" />
       <path value="$PROJECT_DIR$/Victor-Pidlatyuk/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/nordsoftware/lumen-cors" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/defuse/php-encryption" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/php-http/message-factory" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/laravel/passport" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/laravel/socialite" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/illuminate/cookie" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/laravel/legacy-factories" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/paragonie/constant_time_encoding" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/dusterio/lumen-passport" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/lcobucci/clock" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/nyholm/psr7" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/league/oauth1-client" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/league/event" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/league/oauth2-server" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/AuthServer/vendor/illuminate/container" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

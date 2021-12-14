@@ -51,7 +51,6 @@
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/polyfill-php80" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/polyfill-php73" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/string" />
-      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/service-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/polyfill-intl-normalizer" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/polyfill-php72" />
@@ -63,7 +62,6 @@
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/finder" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/event-dispatcher-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/http-foundation" />
-      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/http-client-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/deprecation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/console" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/event-dispatcher" />
@@ -96,7 +94,6 @@
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/illuminate/log" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/illuminate/bus" />
-      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/illuminate/container" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/theseer/tokenizer" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/polyfill-php81" />
@@ -248,6 +245,37 @@
       <excludeFolder url="file://$MODULE_DIR$/Victor-Pidlatyuk/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/Victor-Pidlatyuk/vendor/laravel/serializable-closure" />
       <excludeFolder url="file://$MODULE_DIR$/Victor-Pidlatyuk/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/nordsoftware/lumen-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/defuse/php-encryption" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/phpseclib/phpseclib" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/fruitcake/laravel-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/php-http/message-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/firebase/php-jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/laravel/passport" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/laravel/socialite" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/illuminate/cookie" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/laravel/legacy-factories" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/paragonie/constant_time_encoding" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/asm89/stack-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/dusterio/lumen-passport" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/lcobucci/jwt" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/lcobucci/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/nyholm/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/psr-http-message-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/laminas/laminas-diactoros" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/league/oauth1-client" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/league/event" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/league/oauth2-server" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/AuthServer/vendor/illuminate/container" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

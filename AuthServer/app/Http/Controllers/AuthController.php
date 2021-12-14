@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Exception;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Socialite\Facades\Socialite;
@@ -19,17 +20,20 @@ class AuthController extends Controller
     function oauth(Request $request) {
         $request->session()->put('redirect_uri', $request->get('redirect_uri'));
 
-        return redirect('/oauth/authorize');
+        return redirect(env('CLIENT_URI'));
     }
     function answer(Request $request) {
-        if ($request->get('accept') == true) {
+        $auth_code = $request->cookie('auth_code');
+        $user = User::where('auth_code', $auth_code);
+        $redirect_uri = $request->session()->get('redirect_uri');
 
+        if ($auth_code && $user) {
+            return redirect($redirect_uri.'?auth_code='.$auth_code);
         }
-        return redirect($request->session()->get('redirect_uri').'?accept=false');
-    }
-    function view($request) {
 
+        return redirect($redirect_uri);
     }
+
     function register(Request $request) {
         $validator = Validator::make($request->all(), [
             'login' => 'required|string|unique:users,login',
@@ -40,21 +44,25 @@ class AuthController extends Controller
             'avatar' => 'string'
         ]);
         if ($validator->fails())
-            return redirect(env('CLIENT_URI').'/register');
+            return response()->json(['errors' => $validator->messages()], Response::HTTP_BAD_REQUEST);
+
         $request['password'] = Hash::make($request['password']);
         $user = User::create($request->all());
         $auth_code = Str::random(40);
         $user->update(['auth_code' => $auth_code]);
         $request->session()->put('auth_code', $auth_code);
 
-        return redirect('/oauth/authorize');
+        return response(['auth_code' => $auth_code], 201);
     }
     function login(Request $request)
     {
-        Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
             'login' => 'required|string',
             'password'=>'required|string|min:8'
         ]);
+        if ($validator->fails())
+            return response()->json(['errors' => $validator->messages()], Response::HTTP_BAD_REQUEST);
+
         $auth = $request->only(['login', 'password']);
         if (empty($auth['login']) or empty($auth['password'])) {
             return response(['message' => "Empty fields"], 422);
@@ -69,7 +77,7 @@ class AuthController extends Controller
         $user->update(['auth_code' => $auth_code]);
         $request->session()->put('auth_code', $auth_code);
 
-        return redirect('/oauth/authorize');
+        return response(['auth_code' => $auth_code], 201);;
     }
 
     function passwordReset(Request $request) {

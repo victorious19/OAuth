@@ -100,6 +100,10 @@ export default {
                 'password_confirmation':this.password_confirmation,
                 'email':this.email
             })
+            .then(res => {
+              this.$cookie.set('auth_code', res.data["auth_code"]);
+              window.location.href = '/';
+            })
             .catch(err => {
                 if (err.response.data.errors) this.errors = err.response.data.errors
                 else if(err.response.data.message) this.errors.main =  err.response.data.message

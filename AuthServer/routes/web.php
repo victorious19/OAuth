@@ -39,10 +39,11 @@ $router->group(['prefix' => 'api'], function() use($router) {
 });
 $router->options('{path:.*}', function() {
     return response()->json('',200)
-        ->header('Access-Control-Allow-Headers', 'Content-Type, Accept, Authorization, X-Requested-With, Application');
+        ->header('Access-Control-Allow-Headers', 'Content-Type, Accept, Authorization, X-Requested-With, Application')
+        ->header('Access-Control-Allow-Origin', '*');
 });
-$router->group(['middleware' => 'auth'], function() use($router) {
-    $router->get('/oauth/authorize', function () {
-        return view('index');
-    });
-});
+//$router->group(['middleware' => 'auth'], function() use($router) {
+//    $router->get('/oauth/authorize', function () {
+//        return view('index');
+//    });
+//});

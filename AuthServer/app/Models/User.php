@@ -25,7 +25,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'password',
         'full_name',
         'avatar',
-        'google_id'
+        'google_id',
+        'auth_code'
     ];
 
     /**

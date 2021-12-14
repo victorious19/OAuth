@@ -75,14 +75,16 @@ export default {
               password: this.password,
             }
             axios.post('http://auth-server.test:8000/api/auth/login', data)
-                .then(res => {
-                    this.$router.push({path: '/profile', query: {token: res.data.token, id: res.data.user.id}})
-                })
-                .catch(err => {
-                    if (err.response.data.errors) this.errors = err.response.data.errors
-                    else if(err.response.data.message) this.errors.main =  err.response.data.message
-                    else this.errors.main =  err.response.statusText
-                })
+            .then(res => {
+              alert(res.data)
+              this.$cookie.set('auth_code', res.data["auth_code"]);
+              window.location.href = '/';
+            })
+            .catch(err => {
+              if (err.response.data.errors) this.errors = err.response.data.errors
+              else if(err.response.data.message) this.errors.main =  err.response.data.message
+              else this.errors.main =  err.response.statusText
+            })
         }
     }
 }
