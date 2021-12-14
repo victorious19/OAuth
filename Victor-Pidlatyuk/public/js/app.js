@@ -23573,7 +23573,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.range-slider[data-v-d9d64c0c] {\n    position: absolute;\n    width: 250px;\n}\n.range-slider[data-v-d9d64c0c]::-webkit-slider-thumb {\n    z-index: 2;\n    position: relative;\n}\n.category[data-v-d9d64c0c] {\n    height: auto;\n    max-height: 30em;\n    overflow-x: hidden;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.range-slider[data-v-d9d64c0c] {\r\n    position: absolute;\r\n    width: 250px;\n}\n.range-slider[data-v-d9d64c0c]::-webkit-slider-thumb {\r\n    z-index: 2;\r\n    position: relative;\n}\n.category[data-v-d9d64c0c] {\r\n    height: auto;\r\n    max-height: 30em;\r\n    overflow-x: hidden;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -23597,7 +23597,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.no_change[data-v-aebdd2e0] {\n    background-color: transparent;\n    border:none;\n    outline: none\n}\n.order_select[data-v-aebdd2e0] {\n    -webkit-appearance: none;\n       -moz-appearance: none;\n            appearance: none;\n    -moz-text-align-last: center;\n         text-align-last: center;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.no_change[data-v-aebdd2e0] {\r\n    background-color: transparent;\r\n    border:none;\r\n    outline: none\n}\n.order_select[data-v-aebdd2e0] {\r\n    -webkit-appearance: none;\r\n       -moz-appearance: none;\r\n            appearance: none;\r\n    -moz-text-align-last: center;\r\n         text-align-last: center;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -23645,7 +23645,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.active[data-v-26955003] {\n    background-color: lightgrey;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.active[data-v-26955003] {\r\n    background-color: lightgrey;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -47230,17 +47230,17 @@ var render = function () {
                   return _c("tr", { key: category.id }, [
                     _c("td", [
                       _vm._v(
-                        "\n                        " +
+                        "\r\n                        " +
                           _vm._s(category.id) +
-                          "\n                    "
+                          "\r\n                    "
                       ),
                     ]),
                     _vm._v(" "),
                     _c("td", { staticClass: "text-center" }, [
                       _vm._v(
-                        "\n                        " +
+                        "\r\n                        " +
                           _vm._s(category.name) +
-                          "\n                    "
+                          "\r\n                    "
                       ),
                     ]),
                     _vm._v(" "),
@@ -47293,15 +47293,17 @@ var staticRenderFns = [
     return _c("thead", [
       _c("tr", [
         _c("th", { staticStyle: { width: "2%" } }, [
-          _vm._v("\n                        Id\n                    "),
+          _vm._v("\r\n                        Id\r\n                    "),
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "text-center" }, [
-          _vm._v("\n                        Category\n                    "),
+          _vm._v(
+            "\r\n                        Category\r\n                    "
+          ),
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "text-center" }, [
-          _vm._v("\n                        Delete\n                    "),
+          _vm._v("\r\n                        Delete\r\n                    "),
         ]),
       ]),
     ])
@@ -47543,7 +47545,7 @@ var render = function () {
                         _vm._v(
                           " Server error. " +
                             _vm._s(_vm.errors.main) +
-                            "\n                    "
+                            "\r\n                    "
                         ),
                       ])
                     : _vm._e(),
@@ -47609,7 +47611,7 @@ var render = function () {
             { staticClass: "d-flex flex-wrap justify-content-center" },
             [
               _c("p", { staticClass: "ml-3 me-lg-auto display-4 p-3" }, [
-                _vm._v("\n                GoodShop\n            "),
+                _vm._v("\r\n                GoodShop\r\n            "),
               ]),
               _vm._v(" "),
               _c(
@@ -47677,9 +47679,9 @@ var render = function () {
                     _c("h6", [_vm._v("Product name")]),
                     _c("br"),
                     _vm._v(
-                      "\n                        " +
+                      "\r\n                        " +
                         _vm._s(_vm.product.title) +
-                        "\n                    "
+                        "\r\n                    "
                     ),
                   ]),
                   _vm._v(" "),
@@ -47687,9 +47689,9 @@ var render = function () {
                     _c("h6", [_vm._v("Price")]),
                     _c("br"),
                     _vm._v(
-                      "\n                        " +
+                      "\r\n                        " +
                         _vm._s(_vm.product.price) +
-                        "\n                    "
+                        "\r\n                    "
                     ),
                   ]),
                 ]),
@@ -47872,7 +47874,7 @@ var render = function () {
                   _c("strong", [_vm._v(" Error! ")]),
                   _vm._v(" Server error. "),
                   _c("br"),
-                  _vm._v(_vm._s(_vm.errors.main) + "\n        "),
+                  _vm._v(_vm._s(_vm.errors.main) + "\r\n        "),
                 ])
               : _vm._e(),
           ]),
@@ -48622,7 +48624,7 @@ var render = function () {
                         _vm._v(" Server error. "),
                         _c("br"),
                         _vm._v(
-                          _vm._s(_vm.errors.main) + "\n                    "
+                          _vm._s(_vm.errors.main) + "\r\n                    "
                         ),
                       ])
                     : _vm._e(),
@@ -48882,7 +48884,7 @@ var render = function () {
                       },
                       [
                         _vm._v(
-                          "\n                            Change password\n                        "
+                          "\r\n                            Change password\r\n                        "
                         ),
                       ]
                     ),
@@ -49026,7 +49028,7 @@ var render = function () {
                                         },
                                         [
                                           _vm._v(
-                                            "\n                                            Successful change\n                                        "
+                                            "\r\n                                            Successful change\r\n                                        "
                                           ),
                                         ]
                                       )
@@ -49276,7 +49278,7 @@ var render = function () {
                               _vm._v(" "),
                               _c("strong", [_vm._v(" Error! ")]),
                               _vm._v(
-                                " Server error.\n                            "
+                                " Server error.\r\n                            "
                               ),
                             ])
                           : _vm._e(),
@@ -49290,7 +49292,7 @@ var render = function () {
                               },
                               [
                                 _vm._v(
-                                  "\n                                Successful change\n                            "
+                                  "\r\n                                Successful change\r\n                            "
                                 ),
                               ]
                             )
@@ -49573,7 +49575,7 @@ var staticRenderFns = [
           },
           [
             _c("i", { staticClass: "fab fa-google-plus mr-2" }),
-            _vm._v(" Sign in using Google+\n                    "),
+            _vm._v(" Sign in using Google+\r\n                    "),
           ]
         ),
       ]
@@ -49675,18 +49677,18 @@ var render = function () {
                   return _c("tr", { key: order.id }, [
                     _c("td", [
                       _vm._v(
-                        "\n                        " +
+                        "\r\n                        " +
                           _vm._s(order.id) +
-                          "\n                    "
+                          "\r\n                    "
                       ),
                     ]),
                     _vm._v(" "),
                     _c("td", [
                       _c("a", [
                         _vm._v(
-                          "\n                            " +
+                          "\r\n                            " +
                             _vm._s(order.product) +
-                            "\n                        "
+                            "\r\n                        "
                         ),
                       ]),
                       _vm._v(" "),
@@ -49694,26 +49696,26 @@ var render = function () {
                       _vm._v(" "),
                       _c("small", [
                         _vm._v(
-                          "\n                            Created " +
+                          "\r\n                            Created " +
                             _vm._s(_vm.normal_date(order)) +
-                            "\n                        "
+                            "\r\n                        "
                         ),
                       ]),
                     ]),
                     _vm._v(" "),
                     _c("td", [
                       _vm._v(
-                        "\n                        " +
+                        "\r\n                        " +
                           _vm._s(order.user_full_name) +
-                          "\n                        "
+                          "\r\n                        "
                       ),
                       _c("br"),
                       _vm._v(" "),
                       _c("small", [
                         _vm._v(
-                          "\n                            " +
+                          "\r\n                            " +
                             _vm._s(order.user_email) +
-                            "\n                        "
+                            "\r\n                        "
                         ),
                       ]),
                       _vm._v(" "),
@@ -49721,18 +49723,18 @@ var render = function () {
                       _vm._v(" "),
                       _c("small", [
                         _vm._v(
-                          "\n                            " +
+                          "\r\n                            " +
                             _vm._s(order.phone) +
-                            "\n                        "
+                            "\r\n                        "
                         ),
                       ]),
                     ]),
                     _vm._v(" "),
                     _c("td", [
                       _vm._v(
-                        "\n                        " +
+                        "\r\n                        " +
                           _vm._s(order.price) +
-                          "₴\n                    "
+                          "₴\r\n                    "
                       ),
                     ]),
                     _vm._v(" "),
@@ -49821,23 +49823,23 @@ var staticRenderFns = [
     return _c("thead", [
       _c("tr", [
         _c("th", { staticStyle: { width: "2%" } }, [
-          _vm._v("\n                        Id\n                    "),
+          _vm._v("\r\n                        Id\r\n                    "),
         ]),
         _vm._v(" "),
         _c("th", [
-          _vm._v("\n                        Product\n                    "),
+          _vm._v("\r\n                        Product\r\n                    "),
         ]),
         _vm._v(" "),
         _c("th", [
-          _vm._v("\n                        Client\n                    "),
+          _vm._v("\r\n                        Client\r\n                    "),
         ]),
         _vm._v(" "),
         _c("th", [
-          _vm._v("\n                        Price\n                    "),
+          _vm._v("\r\n                        Price\r\n                    "),
         ]),
         _vm._v(" "),
         _c("th", { staticClass: "text-center", staticStyle: { width: "8%" } }, [
-          _vm._v("\n                        Status\n                    "),
+          _vm._v("\r\n                        Status\r\n                    "),
         ]),
       ]),
     ])
@@ -50069,7 +50071,7 @@ var render = function () {
                 { staticClass: "d-flex flex-wrap justify-content-center" },
                 [
                   _c("p", { staticClass: "ml-3 me-lg-auto display-4 p-3" }, [
-                    _vm._v("\n                GoodShop\n            "),
+                    _vm._v("\r\n                GoodShop\r\n            "),
                   ]),
                   _vm._v(" "),
                   _c(
@@ -50238,9 +50240,9 @@ var render = function () {
                                   _vm._v(" "),
                                   _c("h2", { staticClass: "mb-0" }, [
                                     _vm._v(
-                                      "\n                                                    ₴" +
+                                      "\r\n                                                    ₴" +
                                         _vm._s(_vm.product.price) +
-                                        "\n                                                "
+                                        "\r\n                                                "
                                     ),
                                   ]),
                                   _vm._v(" "),
@@ -50269,7 +50271,7 @@ var render = function () {
                                             "fas fa-cart-plus fa-lg mr-2",
                                         }),
                                         _vm._v(
-                                          "\n                                                        Add to Cart\n                                                    "
+                                          "\r\n                                                        Add to Cart\r\n                                                    "
                                         ),
                                       ]
                                     ),
@@ -50326,9 +50328,9 @@ var render = function () {
                   _vm._v(" "),
                   _c("h2", { staticClass: "mb-0" }, [
                     _vm._v(
-                      "\n                            ₴" +
+                      "\r\n                            ₴" +
                         _vm._s(_vm.product.price) +
-                        "\n                        "
+                        "\r\n                        "
                     ),
                   ]),
                   _vm._v(" "),
@@ -50347,7 +50349,7 @@ var render = function () {
                             staticClass: "fas fa-cart-plus fa-lg mr-2",
                           }),
                           _vm._v(
-                            "\n                                Add to Cart\n                            "
+                            "\r\n                                Add to Cart\r\n                            "
                           ),
                         ]
                       ),
@@ -50475,7 +50477,7 @@ var render = function () {
             class: this.message.class,
             attrs: { role: "alert" },
           },
-          [_vm._v("\n    " + _vm._s(this.message.content) + "\n    ")]
+          [_vm._v("\r\n    " + _vm._s(this.message.content) + "\r\n    ")]
         ),
         _vm._v(" "),
         _c(
@@ -50629,7 +50631,7 @@ var render = function () {
                           _vm._v(" "),
                           _c("p", [
                             _vm._v(
-                              "\n                                    Home\n                                    "
+                              "\r\n                                    Home\r\n                                    "
                             ),
                             _vm.$route.path === "/profile"
                               ? _c("i", {
@@ -50655,7 +50657,7 @@ var render = function () {
                           _vm._v(" "),
                           _c("p", [
                             _vm._v(
-                              "\n                                    Shop\n                                    "
+                              "\r\n                                    Shop\r\n                                    "
                             ),
                             _vm.$route.path === "/orders"
                               ? _c("i", {
@@ -50684,7 +50686,7 @@ var render = function () {
                           _vm._v(" "),
                           _c("p", [
                             _vm._v(
-                              "\n                                    My Products\n                                    "
+                              "\r\n                                    My Products\r\n                                    "
                             ),
                             _vm.$route.path === "/profile/products" ||
                             _vm.$route.path === "/create-product" ||
@@ -50717,7 +50719,7 @@ var render = function () {
                           _vm._v(" "),
                           _c("p", [
                             _vm._v(
-                              "\n                                    Categories\n                                    "
+                              "\r\n                                    Categories\r\n                                    "
                             ),
                             _vm.$route.path === "/profile/categories"
                               ? _c("i", {

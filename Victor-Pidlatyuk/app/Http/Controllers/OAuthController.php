@@ -14,14 +14,15 @@ class OAuthController extends Controller
 
     public function callback(Request $request)
     {
-        if($request->get('accept') == 'false') return redirect('/');
+        $auth_code = $request->get('auth_code');
+        if(!$auth_code) return redirect('/');
 
-        $response = Http::post(config('services.oauth_server.uri') . '/oauth/token', [
+        $response = Http::post(env('OAUTH_SERVER_URI') . '/oauth/token', [
             'grant_type' => 'authorization_code',
             'client_id' => config('services.oauth_server.client_id'),
             'client_secret' => config('services.oauth_server.client_secret'),
             'redirect_uri' => config('services.oauth_server.redirect'),
-            'code' => $request->code
+            'code' => $auth_code
         ])->json();
 
         $request->user()->token()->delete();

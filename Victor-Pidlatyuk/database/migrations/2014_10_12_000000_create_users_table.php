@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('full_name');
             $table->string('google_id')->nullable();
             $table->string('avatar')->default('default.png');
-            $table->string('auth_code')->nullable();
             $table->timestamps();
         });
     }
