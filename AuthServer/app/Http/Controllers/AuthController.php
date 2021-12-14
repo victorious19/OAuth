@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Str;
 use App\Mail\SendMail;
@@ -17,8 +18,8 @@ class AuthController extends Controller
 {
     function oauth(Request $request) {
         $request->session()->put('redirect_uri', $request->get('redirect_uri'));
-        $request->session()->get('auth_code');
-        return redirect('/api/main_view');
+
+        return redirect('/oauth/authorize');
     }
     function answer(Request $request) {
         if ($request->get('accept') == true) {
@@ -26,12 +27,11 @@ class AuthController extends Controller
         }
         return redirect($request->session()->get('redirect_uri').'?accept=false');
     }
-    function view() {
-        return redirect(env('CLIENT_URI'));
+    function view($request) {
+
     }
     function register(Request $request) {
-        return $request;
-        $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'login' => 'required|string|unique:users,login',
             'password'=>'required|confirmed|min:8',
             'full_name'=>'required|string|max:255',
@@ -39,17 +39,19 @@ class AuthController extends Controller
             'google_id' => 'string',
             'avatar' => 'string'
         ]);
+        if ($validator->fails())
+            return redirect(env('CLIENT_URI').'/register');
         $request['password'] = Hash::make($request['password']);
         $user = User::create($request->all());
         $auth_code = Str::random(40);
         $user->update(['auth_code' => $auth_code]);
         $request->session()->put('auth_code', $auth_code);
 
-        return redirect('/');
+        return redirect('/oauth/authorize');
     }
     function login(Request $request)
     {
-        $this->validate($request, [
+        Validator::make($request->all(), [
             'login' => 'required|string',
             'password'=>'required|string|min:8'
         ]);
@@ -67,7 +69,7 @@ class AuthController extends Controller
         $user->update(['auth_code' => $auth_code]);
         $request->session()->put('auth_code', $auth_code);
 
-        return redirect('/');
+        return redirect('/oauth/authorize');
     }
 
     function passwordReset(Request $request) {
@@ -112,11 +114,8 @@ class AuthController extends Controller
         return $user;
     }
     function socialLogin($provider) {
-            try {
-                $user = Socialite::driver($provider)->stateless()->user();
-            } catch(Exception $exception) {
-                redirect('/login?message='.$exception->getMessage());
-            }
+        try {
+            $user = Socialite::driver($provider)->stateless()->user();
             $isUser = User::where('email', $user->email)->first();
             if (isset($isUser)) {
                 if (!$isUser->google_id) $isUser->google_id = $user->id;
@@ -127,16 +126,16 @@ class AuthController extends Controller
                 $login = $user->nickname;
                 if (empty($login) || User::where('login', $login)->first()) {
                     $id = User::max('id');
-                    $id = $id?$id+1:1;
-                    while(User::where('login', 'user'.$id)->first()) $id += 1;
-                    $user->nickname = 'user'.$id;
+                    $id = $id ? $id + 1 : 1;
+                    while (User::where('login', 'user' . $id)->first()) $id += 1;
+                    $user->nickname = 'user' . $id;
                 }
                 $password = Str::random(10);
 
                 $url = $user->avatar_original;
                 $ext = pathinfo($url, PATHINFO_EXTENSION);
-                $img_name = $user->nickname.($ext?'.'.$ext:'');
-                $path = public_path('/img/users/'.$img_name);
+                $img_name = $user->nickname . ($ext ? '.' . $ext : '');
+                $path = public_path('/img/users/' . $img_name);
 
                 $user = new Request([
                     'login' => $user->nickname,
@@ -150,19 +149,21 @@ class AuthController extends Controller
                 try {
                     $response = $this->register($user);
                     file_put_contents($path, file_get_contents($url));
-                }
-                catch (Exception $exception) {
+                } catch (Exception $exception) {
                     User::where('login', $user->login)->delete();
-                    if(file_exists($path)) unlink($path);
+                    if (file_exists($path)) unlink($path);
                     return redirect('/login?message=Register error');
                 }
                 $data = [
                     'title' => 'Your password',
-                    'hi' => 'Hello '.$user->login."!",
-                    'content' => 'Your password: '.$password
+                    'hi' => 'Hello ' . $user->login . "!",
+                    'content' => 'Your password: ' . $password
                 ];
                 Mail::to($user->email)->send(new SendMail($data));
-                return redirect('/profile?token='.$response->original['token'].'&id='.$response->original['user']->id);
+                return redirect('/profile?token=' . $response->original['token'] . '&id=' . $response->original['user']->id);
             }
+        } catch(Exception $exception) {
+            return redirect(env('CLIENT_URI').'/login?message='.$exception->getMessage());
+        }
     }
 }

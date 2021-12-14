@@ -37,8 +37,9 @@ class Authenticate
     public function handle($request, Closure $next, $guard = null)
     {
         if ($this->auth->guard($guard)->guest()) {
-            $user = User::where('auth_code', $request->session()->get('auth_code'))->first();
-            if(!$user) return redirect(env('CLIENT_URI').'/login');
+            $auth_code = $request->session()->get('auth_code');
+            $user = User::where('auth_code', $auth_code)->first();
+            if(!$user || !$auth_code) return redirect(env('CLIENT_URI').'/login');
         }
 
         return $next($request);

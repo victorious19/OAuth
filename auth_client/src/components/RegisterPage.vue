@@ -61,7 +61,7 @@
                 </form>
 
                 <div class="social-auth-links text-center">
-                    <a href="/api/auth/google" class="btn btn-block btn-danger">
+                    <a href="http://auth-server.test:8000/api/auth/google" class="btn btn-block btn-danger">
                         <i class="fab fa-google-plus mr-2"></i>
                         Sign up using Google+
                     </a>

@@ -21,14 +21,14 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function() use($router) {
     $router->get('answer', 'AuthController@answer');
     $router->group(['prefix'=>'auth'], function () use($router){
-        $router->post('register', 'AuthController@register');
-        $router->post('login', 'AuthController@login');
         $router->group(['prefix'=>'{provider}'], function () use($router){
             $router->get('/', function ($provider) {
                 return Socialite::driver($provider)->stateless()->redirect();
             });
             $router->get('/callback', 'AuthController@socialLogin');
         });
+        $router->post('register', 'AuthController@register');
+        $router->post('login', 'AuthController@login');
         $router->post('/reset-password', 'AuthController@passwordReset');
         $router->post('/change-password', 'AuthController@passwordChange');
     });
@@ -40,4 +40,9 @@ $router->group(['prefix' => 'api'], function() use($router) {
 $router->options('{path:.*}', function() {
     return response()->json('',200)
         ->header('Access-Control-Allow-Headers', 'Content-Type, Accept, Authorization, X-Requested-With, Application');
+});
+$router->group(['middleware' => 'auth'], function() use($router) {
+    $router->get('/oauth/authorize', function () {
+        return view('index');
+    });
 });
