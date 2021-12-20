@@ -82,12 +82,11 @@ $app->configure('services');
 
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
+    Fruitcake\Cors\HandleCors::class,
+    App\Http\Middleware\Cors::class
 ]);
 $app->middleware([
     \Illuminate\Session\Middleware\StartSession::class,
-]);
-$app->routeMiddleware([
-    Fruitcake\Cors\HandleCors::class,
 ]);
 
 $app->singleton(Illuminate\Session\SessionManager::class, function () use ($app) {

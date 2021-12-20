@@ -19,9 +19,9 @@ class OAuthController extends Controller
 
         $response = Http::post(env('OAUTH_SERVER_URI') . '/oauth/token', [
             'grant_type' => 'authorization_code',
-            'client_id' => config('services.oauth_server.client_id'),
-            'client_secret' => config('services.oauth_server.client_secret'),
-            'redirect_uri' => config('services.oauth_server.redirect'),
+            'client_id' => env('CLIENT_ID'),
+            'client_secret' => env('CLIENT_SECRET'),
+            'redirect_uri' => env('REDIRECT_URI'),
             'code' => $auth_code
         ])->json();
 
@@ -33,18 +33,17 @@ class OAuthController extends Controller
             'refresh_token' => $response['refresh_token']
         ]);
 
-        return redirect('/home');
+        return redirect('/');
     }
 
     public function refresh(Request $request)
     {
-        $response = Http::post(config('services.oauth_server.uri') . '/oauth/token', [
+        $response = Http::post(env('OAUTH_SERVER_URI') . '/oauth/token', [
             'grant_type' => 'refresh_token',
             'refresh_token' => $request->user()->token->refresh_token,
-            'client_id' => config('services.oauth_server.client_id'),
-            'client_secret' => config('services.oauth_server.client_secret'),
-            'redirect_uri' => config('services.oauth_server.redirect'),
-            'scope' => 'view-posts'
+            'client_id' => env('CLIENT_ID'),
+            'client_secret' => env('CLIENT_SECRET'),
+            'redirect_uri' => env('REDIRECT_URI')
         ]);
 
         if ($response->status() !== 200) {
@@ -61,6 +60,6 @@ class OAuthController extends Controller
             'refresh_token' => $response['refresh_token']
         ]);
 
-        return redirect('/home');
+        return redirect('/');
     }
 }

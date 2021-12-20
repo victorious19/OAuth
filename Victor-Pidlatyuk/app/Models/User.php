@@ -15,6 +15,12 @@ class User extends Authenticatable
     function orders() {
         return $this->hasMany(Order::class);
     }
+
+    public function token()
+    {
+        return $this->hasOne(OauthToken::class);
+    }
+
     /**
      * The attributes that are mass assignable.
      *
